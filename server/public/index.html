@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="vendor/jquery-3.4.1.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <script src="vendor/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="vendor/bootstrap-4.4.1-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+    <div class="container-fluid"></div>
+    <header>
+        <h1>Welcome to Your To Do List!</h1>
+    </header>
+    <main>
+        <h2>What do you have to do today?</h2>
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Task To Do:</label>
+                <textarea id="task-in" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Do By:</label>
+                <input type="date" id="date-in" placeholder="mm/dd">
+            </div>
+        </form>
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Due Date</th>
+                    <th scope="col">Complete?</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody id="task-list">
+                <!--jQuery will fill this in-->
+            </tbody>
+        </table>
+    </main>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    </div>
+    <script src="" async defer></script>
+</body>
+
+</html>
