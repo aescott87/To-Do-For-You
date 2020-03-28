@@ -34,16 +34,18 @@
             <div class="form-group">
                 <label>Do By:</label>
                 <input type="date" id="date-in" placeholder="mm/dd">
+                <button id="btn-add">Add Task</button>
             </div>
         </form>
-        <table class="task-table">
+        <table class="table table-bordered" id="task-table">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Task</th>
-                    <th scope="col">Due Date</th>
+                    <th scope="col">Do By</th>
                     <th scope="col">Complete?</th>
                     <th scope="col">Delete</th>
+                    <th scope="col">Mark as Complete</th>
                 </tr>
             </thead>
             <tbody id="task-list">

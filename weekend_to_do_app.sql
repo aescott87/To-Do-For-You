@@ -2,7 +2,7 @@ CREATE TABLE "tasks"(
     "id" serial PRIMARY KEY,
     "task" varchar(100) NOT NULL,
     "due_date" date,
-    "task_complete" varchar(10)
+    "task_complete" varchar(10) DEFAULT 'Incomplete'
 );
 
 INSERT INTO "tasks"("task", "due_date", "task_complete")
