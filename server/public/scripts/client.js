@@ -4,6 +4,7 @@ function onReady() {
     console.log('jQuery is ready!');
     getTasks();
     $('#btn-add').on('click', addTask);
+    $('#task-list').on('click', '.btn-complete', completeTask)
 }
 
 //Add new task
@@ -66,7 +67,8 @@ function renderTasks(tasks) {
         $tr.append(`<td><button class="btn-delete" data-id="${task.id}">Delete</button></td>`);
         //Conditional to add button if task is not complete
         if (task.task_complete === 'Incomplete') {
-            $tr.append(`<td><button class="btn-complete">Completed</button></td>`);
+            $tr.append(`<td><button class="btn-complete" data-id="${task.id}" 
+            data-complete="${task.task_complete}">Completed</button></td>`);
             $tr.addClass('red');
         }
         else {
@@ -77,4 +79,20 @@ function renderTasks(tasks) {
         $('#task-list').append($tr);
 
     }
+}
+
+//PUT request to update complete status
+function completeTask() {
+    const id = $( this ).data( 'id' );
+    console.log( 'in completeTask:', id, taskStatus );
+    $.ajax({
+        type: 'PUT',
+        url: `/tasks/${id}`,
+        data: { newStatus: 'Completed'}
+    }).then( function( response ){
+        console.log( 'back from PUT:', response );
+        getTasks();
+    }).catch( function (err){
+        alert( 'error updating:', err );
+    }) 
 }
