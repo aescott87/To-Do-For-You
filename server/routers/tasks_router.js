@@ -2,7 +2,7 @@ const express = require('express');
 const tasksRouter = express.Router();
 const pool = require('../modules/pool');
 
-//GET request
+//GET route
 tasksRouter.get('/', (req, res) => {
     console.log('in /tasks GET');
 
@@ -17,9 +17,9 @@ tasksRouter.get('/', (req, res) => {
             console.log('Got an error on SELECT query', error);
             res.sendStatus(500);
         })
-})
+}) //end GET
 
-//POST request
+//POST route
 tasksRouter.post('/', (req, res) => {
     let newTask = req.body;
     console.log(`Adding task`, newTask);
@@ -34,9 +34,9 @@ tasksRouter.post('/', (req, res) => {
             console.log(`Error adding new task`, error);
             res.sendStatus(500);
         });
-});
+}); //end POST
 
-//PUT request
+//PUT route
 tasksRouter.put( '/:id', ( req, res )=>{
     console.log( '/tasks PUT:', req.params.id, req.body );
     const query = `UPDATE "tasks" SET "task_complete"=$1 WHERE "id"=$2;`;
@@ -47,6 +47,19 @@ tasksRouter.put( '/:id', ( req, res )=>{
         console.log( 'error with update:', err );
         res.sendStatus( 500 );
     })
-}) // end /items put
+}) // end PUT
+
+//DELETE route
+tasksRouter.delete( '/:id', ( req, res )=>{
+    console.log( '/tasks DELETE hit:', req.params.id );
+    const query = `DELETE FROM "tasks" WHERE id=$1;`;
+    const values = [ req.params.id ];
+    pool.query( query, values ).then( ( response )=>{
+        res.sendStatus( 200 );
+    }).catch( ( err )=>{
+        console.log( 'error with DELETE:', err );
+        res.sendStatus( 500 );
+    })
+}) //end DELETE
 
 module.exports = tasksRouter;

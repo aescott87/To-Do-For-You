@@ -5,6 +5,7 @@ function onReady() {
     getTasks();
     $('#btn-add').on('click', addTask);
     $('#task-list').on('click', '.btn-complete', completeTask)
+    $('#task-list').on('click', '.btn-delete', deleteTask)
 }
 
 //Add new task
@@ -95,4 +96,19 @@ function completeTask() {
     }).catch( function (err){
         alert( 'error updating:', err );
     }) 
+}
+
+//DELETE request to remove task
+function deleteTask() {
+    const id = $( this ).data( 'id' );
+    console.log( 'in deleteTask:', id );
+    $.ajax({
+        type: 'DELETE',
+        url: `/tasks/${ id }`
+    }).then( function( response ){
+        console.log( 'back from DELETE:', response );
+        getTasks();
+    }).catch( function( err ){
+        alert( 'Error with Delete:', err );
+    })
 }
