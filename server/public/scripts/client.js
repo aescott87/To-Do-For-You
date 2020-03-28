@@ -65,10 +65,10 @@ function renderTasks(tasks) {
         $tr.append(`<td>${task.task}</td>`);
         $tr.append('<td>' + event.toDateString() + '</td>');
         $tr.append(`<td>${task.task_complete}</td>`);
-        $tr.append(`<td><button class="btn-delete" data-id="${task.id}">Delete</button></td>`);
+        $tr.append(`<td><button class="btn-delete" class="btn btn-dark" data-id="${task.id}">Delete</button></td>`);
         //Conditional to add button if task is not complete
         if (task.task_complete === 'Incomplete') {
-            $tr.append(`<td><button class="btn-complete" data-id="${task.id}" 
+            $tr.append(`<td><button class="btn-complete" class="btn btn-light" data-id="${task.id}" 
             data-complete="${task.task_complete}">Completed</button></td>`);
             $tr.addClass('red');
         }
