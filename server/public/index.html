@@ -20,40 +20,42 @@
 </head>
 
 <body>
-    <div class="container-fluid"></div>
-    <header>
-        <h1>Welcome to Your To Do List!</h1>
-    </header>
-    <main>
-        <h2>What do you have to do today?</h2>
-        <form>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">Task To Do:</label>
-                <textarea id="task-in" rows="2"></textarea>
+    <div class="container-fluid">
+        <main>
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">Welcome to For You To Do</h1>
+                    <p class="lead">What do you need to do?</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Do By:</label>
-                <input type="date" id="date-in" placeholder="mm/dd">
-                <button id="btn-add">Add Task</button>
-            </div>
-        </form>
-        <table class="table table-bordered" id="task-table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Task</th>
-                    <th scope="col">Do By</th>
-                    <th scope="col">Complete?</th>
-                    <th scope="col">Delete</th>
-                    <th scope="col">Mark as Complete</th>
-                </tr>
-            </thead>
-            <tbody id="task-list">
-                <!--jQuery will fill this in-->
-            </tbody>
-        </table>
-    </main>
-    <!--[if lt IE 7]>
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Task To Do:</label>
+                    <textarea id="task-in" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Do By:</label>
+                    <input type="date" id="date-in" placeholder="mm/dd">
+                    <button id="btn-add" class="btn btn-secondary">Add Task</button>
+                </div>
+            </form>
+            <table class="table table-bordered" id="task-table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Task</th>
+                        <th scope="col">Do By</th>
+                        <th scope="col">Complete?</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">Mark as Complete</th>
+                    </tr>
+                </thead>
+                <tbody id="task-list">
+                    <!--jQuery will fill this in-->
+                </tbody>
+            </table>
+        </main>
+        <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     </div>
