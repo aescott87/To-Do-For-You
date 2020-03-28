@@ -1,7 +1,19 @@
+html {
+    height: 100%;
+  }
+  body {
+    min-height: 100%;
+    background-color: rgb(199, 176, 236);
+  }
+
 .red {
-    background-color: rgb(235, 140, 140);
+    background-color: lightpink;
 }
 
 .green {
     background-color: rgb(138, 224, 138);
+}
+
+.table-head {
+    background-color: #e9ecef;
 }

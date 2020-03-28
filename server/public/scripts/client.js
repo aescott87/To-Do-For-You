@@ -85,7 +85,7 @@ function renderTasks(tasks) {
 //PUT request to update complete status
 function completeTask() {
     const id = $( this ).data( 'id' );
-    console.log( 'in completeTask:', id, taskStatus );
+    console.log( 'in completeTask:', id);
     $.ajax({
         type: 'PUT',
         url: `/tasks/${id}`,
